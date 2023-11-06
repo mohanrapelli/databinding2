@@ -1,0 +1,50 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.kg.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/firstNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter For 1 Kilogram"
+            android:text="@={viewModel.forkg}" />
+
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstNumber"
+            android:onClick="@{() -> viewModel.onCalculateClick()}"
+            android:text="CALCULATE" />
+
+        <TextView
+            android:id="@+id/resultText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_below="@id/calculateButton"
+            android:text="@{viewModel.forhalfkg}" />
+        <TextView
+            android:id="@+id/resultText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_below="@id/resultText1"
+            android:text="@{viewModel.forthreefourthkg}" />
+        <TextView
+            android:id="@+id/resultText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_below="@id/resultText2"
+            android:text="@{viewModel.foronefourthkg}" />
+    </RelativeLayout>
+</layout>
